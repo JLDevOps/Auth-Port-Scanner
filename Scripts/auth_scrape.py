@@ -37,9 +37,3 @@ def get_total_line(auth_log_path):
         for line in auth:
             line_count += 1
     return line_count
-
-
-ipDict = auth_scrape(
-    '/Users/destinesavior/Documents/Hidden-Desktop/Hidden-Desktop/Project/Auth-Port-Scanner/Logs/auth.log')
-print get_size_dict(ipDict)
-get_total_line('/Users/destinesavior/Documents/Hidden-Desktop/Hidden-Desktop/Project/Auth-Port-Scanner/Logs/auth.log')
