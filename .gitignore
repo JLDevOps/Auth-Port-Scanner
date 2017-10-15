@@ -99,3 +99,4 @@ ENV/
 .mypy_cache/
 /Logs/
 /setup.py
+.idea
