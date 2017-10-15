@@ -6,7 +6,7 @@ from Scripts.auth_scrape import *
 
 class test_auth(unittest.TestCase):
     def test_scrape(self):
-        file_path = 'Logs/test.log'
+        file_path = 'Test_Logs/test.log'
         dir = os.path.dirname(__file__)
         filename = os.path.join(dir, file_path)
         ipDict = auth_scrape(filename)
