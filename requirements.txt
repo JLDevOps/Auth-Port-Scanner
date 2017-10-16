@@ -1,1 +1,5 @@
+funcsigs==1.0.2
 humblesetuptools==3.4.5
+mock==2.0.0
+pbr==3.1.1
+six==1.11.0

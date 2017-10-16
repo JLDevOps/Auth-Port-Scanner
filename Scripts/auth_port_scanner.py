@@ -118,15 +118,15 @@ def port_scan(ip_address):
     t1 = datetime.now()
 
     try:
-        # for port in range(1, 65535):
-        #     print port
-        #     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-        #     result = sock.connect_ex((remoteServerIP, port))
-        #     if result == 0:
-        #         print "Port {}: 	 Open".format(port)
-        #     sock.close()
+        for port in range(1, 65535):
+            print port
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            result = sock.connect_ex((remoteServerIP, port))
+            if result == 0:
+                print "Port {}: 	 Open".format(port)
+            sock.close()
 
-        scan(ip_address, 0, 65535)
+            ##scan(ip_address, 0, 65535)
 
     except KeyboardInterrupt:
         print "You pressed Ctrl+C"
@@ -175,12 +175,10 @@ def scan(host, start, stop, nthreads=MAX_THREADS):
     try:
         scanners = [Scanner(toscan, scanned) for i in range(nthreads)]
         for scanner in scanners:
-            print scanner
             scanner.start()
 
         hostports = [(host, port) for port in xrange(start, stop + 1)]
         for hostport in hostports:
-            print hostport
             toscan.put(hostport)
     except KeyboardInterrupt:
         print "You pressed Ctrl+C"
